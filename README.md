@@ -4,7 +4,6 @@ Pixel-perfect (≤2 px tolerance) replica of Axiom Trade’s Pulse discovery t
 
 - **Production URL (Vercel):** _replace with your deployment once live_
 - **Design baselines:** `design/snapshots/baseline/*.png`
-- **Video walkthrough script:** `video_script.md`
 
 ---
 
