@@ -1,26 +1,52 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pulse-bg: #05060a;
+  --pulse-surface: #0b0c13;
+  --pulse-surface-soft: #11131d;
+  --pulse-border: #1c1f2b;
+  --pulse-accent: #1e9bf0;
+  --pulse-accent-muted: #1b6ec8;
+  --pulse-success: #32d583;
+  --pulse-danger: #f97066;
+  --pulse-warning: #f7b84b;
+  --pulse-text: #f5f7ff;
+  --pulse-text-muted: #b4b7c7;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    @apply border-pulse-border;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-[var(--pulse-bg)] text-pulse-text font-sans antialiased;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at top, rgba(30, 155, 240, 0.12), transparent 55%),
+      radial-gradient(circle at 20% 20%, rgba(249, 112, 102, 0.08), transparent 35%);
+  }
+
+  ::selection {
+    @apply bg-pulse-accent text-pulse-text;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .pulse-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
