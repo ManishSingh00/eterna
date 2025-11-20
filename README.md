@@ -62,18 +62,3 @@ Husky git hooks run `lint-staged` (ESLint + Prettier on changed files) plus `npm
 - **Accessibility**: Radix Tabs/Dialog/Popover/Tooltip, keyboard-focusable rows, ARIA labels, focus trap in modal, tooltip descriptions on headers.
 
 See `DEVNOTES.md` for deeper dives into design tokens, virtualization strategy, and perf trade-offs.
-
-### Visual & Media Deliverables
-
-- Baseline screenshots for 320/375/768/1024/1440 px in `design/snapshots/baseline`.
-- Auto-layout snapshot index: `design/snapshots/README.md`.
-- `video_script.md` (1–2 min narration) + `video_recording_instructions.md` (step-by-step capture flow).
-- Bonus concise VO cues in `recording.md`.
-
-### Deploying to Vercel
-
-1. Create a Vercel project pointing to this repo/folder.
-2. Build command `npm run build`, install `npm install`, output `.next` (mirrors `vercel.json`).
-3. After deploy, update the README link with the live URL and capture Lighthouse screenshots (≥90 scores enforced by `lighthouserc.json`).
-
-Enjoy shipping a production-ready, pixel-accurate Pulse experience!\*\*\* End Patch
